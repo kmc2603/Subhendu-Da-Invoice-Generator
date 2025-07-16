@@ -194,12 +194,7 @@ document.querySelectorAll('#itemsTable tbody tr').forEach(row => {
               ]
             }
           ],
-          {
-            text: 'For M/S Ardhendu Chowdhury',
-            alignment: 'right',
-            margin: [0, 60, 0, 0],
-            bold: true
-          }
+         
         ]
       }
     ],
@@ -226,17 +221,18 @@ document.querySelectorAll('#itemsTable tbody tr').forEach(row => {
   .then(signatureBase64 => {
     // Add signature image below the "For M/S Ardhendu Chowdhury" text
     docDefinition.content.push({
-      columns: [
-        { width: '*', text: '' },
-        {
-          width: 'auto',
-          stack: [
-            { text: 'For M/S Ardhendu Chowdhury', bold: true, alignment: 'right', margin: [0, 30, 0, 4] },
-            { image: signatureBase64, width: 100, alignment: 'right' }
-          ]
-        }
+  columns: [
+    { width: '*', text: '' },
+    {
+      width: 'auto',
+      stack: [
+        { image: signatureBase64, width: 120, margin: [0, 20, 0, 4], alignment: 'right' },
+        { text: 'For M/S Ardhendu Chowdhury', bold: true, alignment: 'right' }
       ]
-    });
+    }
+  ]
+});
+
 
     // Finally generate the PDF
     pdfMake.createPdf(docDefinition).download(`${currentTab.toUpperCase()}_${refNo || 'document'}.pdf`);
