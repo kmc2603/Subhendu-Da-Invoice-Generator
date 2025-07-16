@@ -160,40 +160,50 @@ document.querySelectorAll('#itemsTable tbody tr').forEach(row => {
           ]
         : []),
       {
-        columns: [
-          [
-            { text: 'A/C Details:', bold: true, margin: [0, 10, 0, 2] },
-            {
-              text: [
-                { text: 'Bank Name: ', style: 'bankLabel' },
-                { text: 'Bank of Maharashtra', style: 'bankValue' }
-              ]
-            },
-            {
-              text: [
-                { text: 'A/C Name: ', style: 'bankLabel' },
-                { text: 'Ardhendu Chowdhury', style: 'bankValue' }
-              ]
-            },
-            {
-              text: [
-                { text: 'A/C No.: ', style: 'bankLabel' },
-                { text: '60293622134', style: 'bankValue' }
-              ]
-            },
-            {
-              text: [
-                { text: 'IFS Code: ', style: 'bankLabel' },
-                { text: 'MAHB0000973', style: 'bankValue' }
-              ]
-            },
-            {
-              text: [
-                { text: 'PAN No.: ', style: 'bankLabel' },
-                { text: 'ASSPC3871D', style: 'bankValue' }
-              ]
-            }
-          ],
+  columns: [
+    [
+      { text: 'A/C Details:', bold: true, margin: [0, 10, 0, 2] },
+      {
+        text: [
+          { text: 'Bank Name: ', style: 'bankLabel' },
+          { text: 'Bank of Maharashtra', style: 'bankValue' }
+        ]
+      },
+      {
+        text: [
+          { text: 'A/C Name: ', style: 'bankLabel' },
+          { text: 'Ardhendu Chowdhury', style: 'bankValue' }
+        ]
+      },
+      {
+        text: [
+          { text: 'A/C No.: ', style: 'bankLabel' },
+          { text: '60293622134', style: 'bankValue' }
+        ]
+      },
+      {
+        text: [
+          { text: 'IFS Code: ', style: 'bankLabel' },
+          { text: 'MAHB0000973', style: 'bankValue' }
+        ]
+      },
+      {
+        text: [
+          { text: 'PAN No.: ', style: 'bankLabel' },
+          { text: 'ASSPC3871D', style: 'bankValue' }
+        ]
+      }
+    ],
+    {
+      width: 'auto',
+      stack: [
+        { image: signatureBase64, width: 130, alignment: 'right', margin: [0, 20, 0, 2] },
+        { text: 'For M/S Ardhendu Chowdhury', bold: true, alignment: 'right', margin: [0, 0, 0, 0] }
+      ]
+    }
+  ]
+}
+
          
         ]
       }
