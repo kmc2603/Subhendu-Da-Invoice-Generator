@@ -1,3 +1,15 @@
+async function getBase64FromUrl(url) {
+  const response = await fetch(url);
+  const blob = await response.blob();
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onloadend = () => resolve(reader.result);
+    reader.onerror = reject;
+    reader.readAsDataURL(blob);
+  });
+}
+
+
 function generatePDF() {
   const clientName = document.getElementById('clientName').value || '';
   const clientAddress = document.getElementById('clientAddress').value || '';
@@ -210,5 +222,28 @@ document.querySelectorAll('#itemsTable tbody tr').forEach(row => {
     }
   };
 
-  pdfMake.createPdf(docDefinition).download(`${currentTab.toUpperCase()}_${refNo || 'document'}.pdf`);
+  getBase64FromUrl('https://raw.githubusercontent.com/kmc2603/Subhendu-Da-Invoice-Generator/signature-update/assets/signature.png')
+  .then(signatureBase64 => {
+    // Add signature image below the "For M/S Ardhendu Chowdhury" text
+    docDefinition.content.push({
+      columns: [
+        { width: '*', text: '' },
+        {
+          width: 'auto',
+          stack: [
+            { text: 'For M/S Ardhendu Chowdhury', bold: true, alignment: 'right', margin: [0, 30, 0, 4] },
+            { image: signatureBase64, width: 100, alignment: 'right' }
+          ]
+        }
+      ]
+    });
+
+    // Finally generate the PDF
+    pdfMake.createPdf(docDefinition).download(`${currentTab.toUpperCase()}_${refNo || 'document'}.pdf`);
+  })
+  .catch(error => {
+    console.error("Failed to load signature image:", error);
+    alert("Could not load signature image. Please check the URL or try again later.");
+  });
+
 }
