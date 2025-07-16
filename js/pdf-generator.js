@@ -50,9 +50,9 @@ document.querySelectorAll('#itemsTable tbody tr').forEach(row => {
             {
               stack: [
                 { text: [{ text: 'Address: ', style: 'label' }, { text: 'Shyamnagar, North 24 Parganas, West Bengal - 743127', style: 'value' }] },
-                { text: [{ text: 'Phone No.: ', style: 'label' }, { text: '9038271075', style: 'value' }] },
-                { text: [{ text: 'Mobile No.: ', style: 'label' }, { text: '9038982752', style: 'value' }] },
-                { text: [{ text: 'Reg. No.: ', style: 'label' }, { text: '547/2023-26', style: 'value' }] },
+                { text: [{ text: 'Phone No: ', style: 'label' }, { text: '9038271075', style: 'value' }] },
+                { text: [{ text: 'Mobile No: ', style: 'label' }, { text: '9038982752', style: 'value' }] },
+                { text: [{ text: 'Reg. No: ', style: 'label' }, { text: '547/2023-26', style: 'value' }] },
                 {
                   text: [
                     { text: 'Email ID: ', style: 'label' },
