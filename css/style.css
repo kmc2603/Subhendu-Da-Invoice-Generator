@@ -1,27 +1,35 @@
-body {
-  font-family: 'Roboto', sans-serif;
+/* ✅ Global Reset & Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
   margin: 0;
-  padding: 1rem;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
   background: #f9f9f9;
 }
 
+/* ✅ Main Container */
 .container {
+  width: 100%;
   max-width: 900px;
-  margin: auto;
+  margin: 0 auto;
   background: #fff;
-  padding: 2rem;
+  padding: 2rem 1.5rem; /* Equal spacing left & right */
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+/* ✅ Page Title */
 h1 {
   text-align: center;
 }
 
-#refNo {
-  text-transform: uppercase;
-}
-
+/* ✅ Tabs */
 .tabs {
   display: flex;
   justify-content: center;
@@ -43,6 +51,7 @@ h1 {
   color: white;
 }
 
+/* ✅ Form Section */
 .form-section {
   margin-top: 1rem;
 }
@@ -66,6 +75,17 @@ h1 {
   width: 100%;
 }
 
+/* ✅ Force uppercase for Reference Number only */
+#refNo {
+  text-transform: uppercase;
+}
+
+/* ✅ Table Styling */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -80,11 +100,13 @@ td {
   text-align: left;
 }
 
+/* ✅ Totals */
 .total-section {
   text-align: right;
   margin-top: 1rem;
 }
 
+/* ✅ Button Styling */
 .btn {
   padding: 0.7rem 1.5rem;
   margin-top: 1rem;
@@ -93,19 +115,30 @@ td {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .btn:disabled {
   background: #aaa;
 }
 
-/* ✅ Responsive styling */
+/* ✅ Responsive Design */
 @media (max-width: 768px) {
   .container {
-    padding: 1rem;
+    padding: 1.5rem 1rem;
   }
 
-  table, thead, tbody, th, td, tr {
+  .btn {
+    width: 100%;
+  }
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
     display: block;
     width: 100%;
   }
@@ -129,6 +162,8 @@ td {
     padding: 0.4rem 0.6rem;
     border: none;
     border-bottom: 1px solid #ddd;
+    flex-wrap: wrap;
+    word-break: break-word;
   }
 
   td::before {
@@ -146,10 +181,5 @@ td {
     font-size: 1rem;
     margin-top: 1rem;
     text-align: center;
-  }
-
-  .btn {
-    width: 100%;
-    margin-top: 1rem;
   }
 }
