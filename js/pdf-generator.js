@@ -150,7 +150,7 @@ function generatePDF() {
                     image: signatureBase64,
                     width: 160,
                     alignment: 'right',
-                    margin: [-65, 10, 0, 4]
+                    margin: [-5, 10, 0, 4]
                   },
                   {
                     text: 'For M/S Ardhendu Chowdhury',
