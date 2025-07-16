@@ -226,8 +226,9 @@ document.querySelectorAll('#itemsTable tbody tr').forEach(row => {
     {
       width: 'auto',
       stack: [
-        { image: signatureBase64, width: 120, margin: [0, 20, 0, 4], alignment: 'right' },
-        { text: 'For M/S Ardhendu Chowdhury', bold: true, alignment: 'right' }
+        { image: signatureBase64, width: 120, margin: [0, 0, 0, 2], alignment: 'right' },
+{ text: 'For M/S Ardhendu Chowdhury', bold: true, alignment: 'right', margin: [0, 0, 0, 0] }
+
       ]
     }
   ]
