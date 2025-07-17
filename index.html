@@ -75,6 +75,17 @@
     }
   });
 </script>
+<script>
+  window.currentTab = 'bill'; // Default tab
 
+  function switchTab(tab) {
+    window.currentTab = tab;
+
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelector(`.tab[onclick="switchTab('${tab}')"]`).classList.add('active');
+
+    // You can show/hide specific content if needed here later
+  }
+</script>
 </body>
 </html>
