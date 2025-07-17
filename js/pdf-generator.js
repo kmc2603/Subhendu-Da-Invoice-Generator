@@ -20,6 +20,9 @@ function generatePDF() {
   const grandTotal = document.getElementById("grand-total").innerText || '0.00';
   const totalWords = document.getElementById("total-words").innerText || '';
   const currentTab = window.currentTab || 'bill';
+  const docTitle = currentTab === 'quotation' ? 'QUOTATION' : 'BILL';
+const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
+
 
   const items = [];
   let serial = 1;
