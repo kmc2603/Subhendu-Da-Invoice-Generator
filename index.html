@@ -79,21 +79,6 @@
     }
   });
 </script>
-<script>
-  window.currentTab = 'bill'; // default
 
-  function switchTab(tab) {
-    window.currentTab = tab;
-
-    // Switch tab appearance
-    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-    document.querySelector(`.tab[onclick="switchTab('${tab}')"]`).classList.add('active');
-
-    // Update heading inside PDF title if needed
-    const heading = document.querySelector('.tab-title');
-    if (heading) heading.textContent = tab === 'bill' ? 'BILL' : 'QUOTATION';
-  }
-
-</script>
 </body>
 </html>
