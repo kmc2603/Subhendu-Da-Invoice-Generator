@@ -2,9 +2,18 @@ let currentTab = 'bill';
 
 function switchTab(tab) {
   currentTab = tab;
+
+  // Update active tab UI
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  event.target.classList.add('active');
+  document.querySelector(`.tab[onclick="switchTab('${tab}')"]`).classList.add('active');
+
+  // Update heading in the form section
+  const tabTitle = document.querySelector(".tab-title");
+  if (tabTitle) {
+    tabTitle.textContent = currentTab === 'bill' ? 'BILL' : 'QUOTATION';
+  }
 }
+
 
 function addItem() {
   const table = document.getElementById("itemsTable").querySelector("tbody");
