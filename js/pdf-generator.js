@@ -33,12 +33,13 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
     const amt = row.cells[4].innerText || '0';
     if (desc !== '') {
       items.push([
-        `${serial++}`,
-        desc,
-        qty === 'na' ? 'N/A' : qty,
-        new Intl.NumberFormat('en-IN', { minimumFractionDigits: 2 }).format(rate),
-        new Intl.NumberFormat('en-IN', { minimumFractionDigits: 2 }).format(parseFloat(amt.replace(/,/g, '')))
-      ]);
+  { text: `${serial++}`, alignment: 'center' },
+  { text: desc, noWrap: false },
+  { text: qty === 'na' ? 'N/A' : qty, alignment: 'center', noWrap: true },
+  { text: new Intl.NumberFormat('en-IN', { minimumFractionDigits: 2 }).format(rate), alignment: 'right' },
+  { text: new Intl.NumberFormat('en-IN', { minimumFractionDigits: 2 }).format(parseFloat(amt.replace(/,/g, ''))), alignment: 'right' }
+]);
+
     }
   });
 
