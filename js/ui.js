@@ -1,26 +1,43 @@
 window.currentTab = 'bill';
 
-function switchTab(tabName) {
-  const billTab = document.getElementById("bill-tab");
-  const quotationTab = document.getElementById("quotation-tab");
+window.currentTab = "bill"; // Default
 
-  // Update currentTab
+function switchTab(tabName) {
   window.currentTab = tabName;
 
-  if (tabName === "bill") {
-    billTab.classList.add("active");
-    quotationTab.classList.remove("active");
-    document.getElementById("quotation-content").style.display = "none";
-    document.getElementById("bill-content").style.display = "block";
-  } else {
-    quotationTab.classList.add("active");
-    billTab.classList.remove("active");
-    document.getElementById("bill-content").style.display = "none";
-    document.getElementById("quotation-content").style.display = "block";
+  // Remove active class from all
+  const tabs = document.querySelectorAll(".tab");
+  tabs.forEach(tab => {
+    tab.classList.remove("active");
+    if (tab.dataset.tab === tabName) tab.classList.add("active");
+  });
+
+  // Update the heading
+  const heading = document.getElementById("tab-heading");
+  if (heading) {
+    heading.textContent = tabName === "quotation" ? "QUOTATION" : "BILL";
   }
 
   console.log("Switched to tab:", window.currentTab);
 }
+
+// Attach event listeners
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".tab").forEach(tab => {
+    tab.addEventListener("click", () => {
+      switchTab(tab.dataset.tab);
+    });
+  });
+
+  // Optional: auto-uppercase reference input
+  const refInput = document.getElementById("refNo");
+  if (refInput) {
+    refInput.addEventListener("input", () => {
+      refInput.value = refInput.value.toUpperCase();
+    });
+  }
+});
+
 
 
 
