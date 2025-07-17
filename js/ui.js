@@ -1,19 +1,27 @@
 window.currentTab = 'bill';
 
-function switchTab(tab) {
-  window.currentTab = tab;
+function switchTab(tabName) {
+  const billTab = document.getElementById("bill-tab");
+  const quotationTab = document.getElementById("quotation-tab");
 
-  // Update tab highlight
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.querySelector(`.tab[onclick="switchTab('${tab}')"]`).classList.add('active');
+  // Update currentTab
+  window.currentTab = tabName;
 
-  // Update the tab heading below Reference/Client section
-  const tabTitle = document.querySelector(".tab-title");
-  if (tabTitle) {
-  tabTitle.textContent = window.currentTab === 'quotation' ? 'QUOTATION' : 'BILL';
+  if (tabName === "bill") {
+    billTab.classList.add("active");
+    quotationTab.classList.remove("active");
+    document.getElementById("quotation-content").style.display = "none";
+    document.getElementById("bill-content").style.display = "block";
+  } else {
+    quotationTab.classList.add("active");
+    billTab.classList.remove("active");
+    document.getElementById("bill-content").style.display = "none";
+    document.getElementById("quotation-content").style.display = "block";
+  }
+
+  console.log("Switched to tab:", window.currentTab);
 }
 
-}
 
 
 function addItem() {
