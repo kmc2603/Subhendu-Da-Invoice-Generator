@@ -3,14 +3,14 @@ let currentTab = 'bill';
 function switchTab(tab) {
   currentTab = tab;
 
-  // Update active tab UI
+  // Update tab highlight
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   document.querySelector(`.tab[onclick="switchTab('${tab}')"]`).classList.add('active');
 
-  // Update heading in the form section
+  // Update the tab heading below Reference/Client section
   const tabTitle = document.querySelector(".tab-title");
   if (tabTitle) {
-    tabTitle.textContent = currentTab === 'bill' ? 'BILL' : 'QUOTATION';
+    tabTitle.textContent = currentTab === 'quotation' ? 'QUOTATION' : 'BILL';
   }
 }
 
