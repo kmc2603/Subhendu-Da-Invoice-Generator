@@ -1,7 +1,7 @@
 let currentTab = 'bill';
 
 function switchTab(tab) {
-  currentTab = tab;
+  window.currentTab = tab;
 
   // Update tab highlight
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
@@ -10,8 +10,9 @@ function switchTab(tab) {
   // Update the tab heading below Reference/Client section
   const tabTitle = document.querySelector(".tab-title");
   if (tabTitle) {
-    tabTitle.textContent = currentTab === 'quotation' ? 'QUOTATION' : 'BILL';
-  }
+  tabTitle.textContent = window.currentTab === 'quotation' ? 'QUOTATION' : 'BILL';
+}
+
 }
 
 
