@@ -1,4 +1,4 @@
-let currentTab = 'bill';
+window.currentTab = 'bill';
 
 function switchTab(tab) {
   window.currentTab = tab;
