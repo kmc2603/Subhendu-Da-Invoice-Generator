@@ -76,16 +76,21 @@
   });
 </script>
 <script>
-  window.currentTab = 'bill'; // Default tab
+  window.currentTab = 'bill'; // default
 
   function switchTab(tab) {
     window.currentTab = tab;
 
+    // Switch tab appearance
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
     document.querySelector(`.tab[onclick="switchTab('${tab}')"]`).classList.add('active');
 
-    // You can show/hide specific content if needed here later
+    // Update heading inside PDF title if needed
+    const heading = document.querySelector('.tab-title');
+    if (heading) heading.textContent = tab === 'bill' ? 'BILL' : 'QUOTATION';
   }
+</script>
+
 </script>
 </body>
 </html>
