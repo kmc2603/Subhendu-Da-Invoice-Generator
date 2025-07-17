@@ -113,7 +113,7 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
           { text: `Site Name: ${siteName}`, style: 'siteLabel', margin: [0, 0, 0, 10] },
           {
             table: {
-              widths: [35, '*', 'auto', 50, 'auto'],
+              widths: ['auto', '*', 'auto', 50, 'auto'],
               body: [['Sl. No', 'Description', 'Qty', 'Rate (₹)', 'Amount (₹)'], ...items]
             },
             layout: {
