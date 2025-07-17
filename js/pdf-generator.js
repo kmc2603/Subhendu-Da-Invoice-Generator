@@ -89,17 +89,18 @@ function generatePDF() {
               vLineColor: '#333'
             }
           },
-          {
-            text: currentTab.toUpperCase(),
-            style: 'billTitle',
-            alignment: 'center',
-            margin: [0, 12, 0, 14]
-          },
+         
           {
             columns: [
               { text: [{ text: 'Ref. No: ', style: 'refLabel' }, { text: refNo, style: 'refValue' }] },
               { text: [{ text: 'Dated: ', style: 'refLabel' }, { text: date, style: 'refValue' }], alignment: 'right' }
             ]
+          },
+           {
+            text: currentTab.toUpperCase(),
+            style: 'billTitle',
+            alignment: 'center',
+            margin: [0, 12, 0, 14]
           },
           { text: 'Client Name:', style: 'label', margin: [0, 14, 0, 2] },
           { text: clientName, style: 'clientValue' },
