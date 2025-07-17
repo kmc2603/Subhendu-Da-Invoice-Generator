@@ -46,11 +46,31 @@ function generatePDF() {
         pageSize: 'A4',
         pageMargins: [40, 60, 40, 60],
         defaultStyle: { font: 'Roboto' },
+        footer: function(currentPage, pageCount) {
+  return {
+    columns: [
+      {
+        text: 'Email: chowdhuryardhendu00@gmail.com',
+        alignment: 'center',
+        margin: [0, 10, 0, 10],
+        fontSize: 10,
+        color: '#1565C0',
+        italics: true
+      }
+    ]
+  };
+},
+
         content: [
           {
             columns: [
               { text: 'M/S Ardhendu Chowdhury', style: 'header' },
-              { text: currentTab.toUpperCase(), style: 'billTitle' }
+              {
+  text: currentTab.toUpperCase(),
+  style: 'billTitle',
+  alignment: 'center',
+  margin: [0, 20, 0, 10]
+}
             ]
           },
           {
@@ -64,10 +84,7 @@ function generatePDF() {
                   { text: [{ text: 'Mobile No: ', style: 'label' }, { text: '9038982752', style: 'value' }] },
                   { text: [{ text: 'Reg. No: ', style: 'label' }, { text: '547/2023-26', style: 'value' }] },
                   {
-                    text: [
-                      { text: 'Email ID: ', style: 'label' },
-                      { text: 'chowdhuryardhendu00@gmail.com', style: 'emailLink', link: 'mailto:chowdhuryardhendu00@gmail.com' }
-                    ]
+                    
                   }
                 ],
                 style: 'infoBox'
@@ -164,7 +181,12 @@ function generatePDF() {
         ],
         styles: {
           header: { fontSize: 16, bold: true, color: '#0D47A1' },
-          billTitle: { fontSize: 16, bold: true, alignment: 'right', color: '#1565C0' },
+          billTitle: {
+  fontSize: 16,
+  bold: true,
+  decoration: 'underline',
+  color: '#000000'
+}
           infoBox: { fontSize: 10, lineHeight: 1.4 },
           label: { fontSize: 10, bold: true, color: '#333' },
           value: { fontSize: 10, color: '#222' },
