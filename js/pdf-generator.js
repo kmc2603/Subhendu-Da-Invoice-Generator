@@ -125,7 +125,8 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
     paddingTop: function(i, node) { return 6; },
     paddingBottom: function(i, node) { return 6; }
   },
-  margin: [0, 0, 0, 10]
+            style: 'wrapText',
+           margin: [0, 0, 0, 10]
 },
 
           {
