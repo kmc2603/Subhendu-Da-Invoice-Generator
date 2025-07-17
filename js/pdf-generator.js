@@ -67,33 +67,9 @@ function generatePDF() {
   style: 'header'
 },
 {
-  margin: [0, 6, 0, 10],
-  table: {
-    widths: ['*'],
-    body: [[{
-      stack: [
-        { text: [{ text: 'Address: ', style: 'label' }, { text: 'Shyamnagar, North 24 Parganas, West Bengal - 743127', style: 'value' }] },
-        { text: [{ text: 'Phone No: ', style: 'label' }, { text: '9038271075', style: 'value' }] },
-        { text: [{ text: 'Mobile No: ', style: 'label' }, { text: '9038982752', style: 'value' }] },
-        { text: [{ text: 'Reg. No: ', style: 'label' }, { text: '547/2023-26', style: 'value' }] }
-      ],
-      style: 'infoBox'
-    }]]
-  },
-  layout: {
-    fillColor: '#f3f3f3',
-    hLineColor: '#333',
-    vLineColor: '#333'
-  }
-},
-{
-  text: currentTab.toUpperCase(),
-  style: 'billTitle',
-  alignment: 'center',
-  margin: [0, 12, 0, 14]
-},
 
-            margin: [0, 6, 0, 10],
+            {
+              margin: [0, 6, 0, 10],
             table: {
               widths: ['*'],
               body: [[{
@@ -114,6 +90,12 @@ function generatePDF() {
               hLineColor: '#333',
               vLineColor: '#333'
             }
+          },
+          {
+            text: currentTab.toUpperCase(),
+            style: 'billTitle',
+            alignment: 'center',
+            margin: [0, 12, 0, 14]
           },
           {
             columns: [
