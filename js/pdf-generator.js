@@ -20,6 +20,9 @@ function generatePDF() {
   const grandTotal = document.getElementById("grand-total").innerText || '0.00';
   const totalWords = document.getElementById("total-words").innerText || '';
   const currentTab = window.currentTab || 'bill';
+  const docTitle = currentTab === 'quotation' ? 'QUOTATION' : 'BILL';
+const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
+
 
   const items = [];
   let serial = 1;
@@ -46,15 +49,28 @@ function generatePDF() {
         pageSize: 'A4',
         pageMargins: [40, 60, 40, 60],
         defaultStyle: { font: 'Roboto' },
+        footer: function(currentPage, pageCount) {
+  return {
+    columns: [
+      {
+        text: 'Email: chowdhuryardhendu00@gmail.com',
+        alignment: 'center',
+        margin: [0, 10, 0, 10],
+        fontSize: 10,
+        color: '#1565C0',
+        italics: true
+      }
+    ]
+  };
+},
+
         content: [
           {
-            columns: [
-              { text: 'M/S Ardhendu Chowdhury', style: 'header' },
-              { text: currentTab.toUpperCase(), style: 'billTitle' }
-            ]
-          },
-          {
-            margin: [0, 6, 0, 10],
+  text: 'M/S Ardhendu Chowdhury',
+  style: 'header'
+},
+            {
+              margin: [0, 6, 0, 10],
             table: {
               widths: ['*'],
               body: [[{
@@ -64,10 +80,7 @@ function generatePDF() {
                   { text: [{ text: 'Mobile No: ', style: 'label' }, { text: '9038982752', style: 'value' }] },
                   { text: [{ text: 'Reg. No: ', style: 'label' }, { text: '547/2023-26', style: 'value' }] },
                   {
-                    text: [
-                      { text: 'Email ID: ', style: 'label' },
-                      { text: 'chowdhuryardhendu00@gmail.com', style: 'emailLink', link: 'mailto:chowdhuryardhendu00@gmail.com' }
-                    ]
+                    
                   }
                 ],
                 style: 'infoBox'
@@ -79,11 +92,18 @@ function generatePDF() {
               vLineColor: '#333'
             }
           },
+         
           {
             columns: [
               { text: [{ text: 'Ref. No: ', style: 'refLabel' }, { text: refNo, style: 'refValue' }] },
               { text: [{ text: 'Dated: ', style: 'refLabel' }, { text: date, style: 'refValue' }], alignment: 'right' }
             ]
+          },
+           {
+            text: currentTab.toUpperCase(),
+            style: 'billTitle',
+            alignment: 'center',
+            margin: [0, 12, 0, 14]
           },
           { text: 'Client Name:', style: 'label', margin: [0, 14, 0, 2] },
           { text: clientName, style: 'clientValue' },
@@ -164,7 +184,12 @@ function generatePDF() {
         ],
         styles: {
           header: { fontSize: 16, bold: true, color: '#0D47A1' },
-          billTitle: { fontSize: 16, bold: true, alignment: 'right', color: '#1565C0' },
+          billTitle: {
+  fontSize: 16,
+  bold: true,
+  decoration: 'underline',
+  color: '#000000'
+},
           infoBox: { fontSize: 10, lineHeight: 1.4 },
           label: { fontSize: 10, bold: true, color: '#333' },
           value: { fontSize: 10, color: '#222' },

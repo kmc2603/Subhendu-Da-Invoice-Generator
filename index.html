@@ -14,8 +14,9 @@
   <div class="container">
     <h1>Bill & Quotation Generator</h1>
     <div class="tabs">
-      <div class="tab active" onclick="switchTab('bill')">Bill</div>
-      <div class="tab" onclick="switchTab('quotation')">Quotation</div>
+      <div class="tab active" data-tab="bill">Bill</div>
+<div class="tab" data-tab="quotation">Quotation</div>
+
     </div>
 
     <div class="form-section reference-tab">
@@ -39,6 +40,10 @@
     <label for="siteName">Site Name</label>
     <input type="text" id="siteName" placeholder="Enter site name" />
   </div>
+
+<div id="tab-heading" class="tab-title" style="text-align: center; font-weight: bold; font-size: 16px; margin-top: 10px;">
+  BILL
+</div>
 
 
       <table id="itemsTable">

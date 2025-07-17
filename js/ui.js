@@ -1,10 +1,45 @@
-let currentTab = 'bill';
+window.currentTab = 'bill';
 
-function switchTab(tab) {
-  currentTab = tab;
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  event.target.classList.add('active');
+window.currentTab = "bill"; // Default
+
+function switchTab(tabName) {
+  window.currentTab = tabName;
+
+  // Remove active class from all
+  const tabs = document.querySelectorAll(".tab");
+  tabs.forEach(tab => {
+    tab.classList.remove("active");
+    if (tab.dataset.tab === tabName) tab.classList.add("active");
+  });
+
+  // Update the heading
+  const heading = document.getElementById("tab-heading");
+  if (heading) {
+    heading.textContent = tabName === "quotation" ? "QUOTATION" : "BILL";
+  }
+
+  console.log("Switched to tab:", window.currentTab);
 }
+
+// Attach event listeners
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".tab").forEach(tab => {
+    tab.addEventListener("click", () => {
+      switchTab(tab.dataset.tab);
+    });
+  });
+
+  // Optional: auto-uppercase reference input
+  const refInput = document.getElementById("refNo");
+  if (refInput) {
+    refInput.addEventListener("input", () => {
+      refInput.value = refInput.value.toUpperCase();
+    });
+  }
+});
+
+
+
 
 function addItem() {
   const table = document.getElementById("itemsTable").querySelector("tbody");
