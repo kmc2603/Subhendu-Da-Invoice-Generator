@@ -186,7 +186,7 @@ function generatePDF() {
   bold: true,
   decoration: 'underline',
   color: '#000000'
-}
+},
           infoBox: { fontSize: 10, lineHeight: 1.4 },
           label: { fontSize: 10, bold: true, color: '#333' },
           value: { fontSize: 10, color: '#222' },
