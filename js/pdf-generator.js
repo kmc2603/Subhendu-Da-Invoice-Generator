@@ -39,7 +39,7 @@ function generatePDF() {
     }
   });
 
-  getBase64FromUrl('https://raw.githubusercontent.com/kmc2603/Subhendu-Da-Invoice-Generator/signature-update/assets/signature.png')
+  getBase64FromUrl('https://raw.githubusercontent.com/kmc2603/Subhendu-Da-Invoice-Generator/main/assets/signature.png')
     .then(signatureBase64 => {
 
       const docDefinition = {
