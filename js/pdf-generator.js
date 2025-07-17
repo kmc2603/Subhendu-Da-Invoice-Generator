@@ -66,8 +66,6 @@ function generatePDF() {
   text: 'M/S Ardhendu Chowdhury',
   style: 'header'
 },
-{
-
             {
               margin: [0, 6, 0, 10],
             table: {
