@@ -112,17 +112,22 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
           { text: clientAddress, style: 'clientValue' },
           { text: `Site Name: ${siteName}`, style: 'siteLabel', margin: [0, 0, 0, 10] },
           {
-            table: {
-              widths: ['auto', '*', 'auto', 50, 'auto'],
-              body: [['Sl. No', 'Description', 'Qty', 'Rate (₹)', 'Amount (₹)'], ...items]
-            },
-            layout: {
-              fillColor: (rowIdx) => rowIdx === 0 ? '#eeeeee' : null,
-              hLineColor: '#333',
-              vLineColor: '#333'
-            },
-            margin: [0, 0, 0, 10]
-          },
+  table: {
+    widths: ['auto', '*', 'auto', 60, 'auto'],  // slightly increase rate column
+    body: [['Sl. No', 'Description', 'Qty', 'Rate (₹)', 'Amount (₹)'], ...items]
+  },
+  layout: {
+    fillColor: (rowIdx) => rowIdx === 0 ? '#eeeeee' : null,
+    hLineColor: '#333',
+    vLineColor: '#333',
+    paddingLeft: function(i, node) { return 4; },
+    paddingRight: function(i, node) { return 4; },
+    paddingTop: function(i, node) { return 6; },
+    paddingBottom: function(i, node) { return 6; }
+  },
+  margin: [0, 0, 0, 10]
+},
+
           {
             text: `Grand Total: ₹${grandTotal}`,
             alignment: 'right',
