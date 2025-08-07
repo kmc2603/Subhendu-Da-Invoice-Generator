@@ -72,29 +72,38 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
   text: 'M/S Ardhendu Chowdhury',
   style: 'header'
 },
-            {
-              margin: [0, 6, 0, 10],
-            table: {
-              widths: ['*'],
-              body: [[{
-                stack: [
-                  { text: [{ text: 'Address: ', style: 'label' }, { text: 'Shyamnagar, North 24 Parganas, West Bengal - 743127', style: 'value' }] },
-                  { text: [{ text: 'Phone No: ', style: 'label' }, { text: '9038271075', style: 'value' }] },
-                  { text: [{ text: 'Mobile No: ', style: 'label' }, { text: '9038982752', style: 'value' }] },
-                  { text: [{ text: 'Reg. No: ', style: 'label' }, { text: '547/2023-26', style: 'value' }] },
-                  {
-                    
-                  }
-                ],
-                style: 'infoBox'
-              }]]
-            },
-            layout: {
-              fillColor: '#f3f3f3',
-              hLineColor: '#333',
-              vLineColor: '#333'
-            }
-          },
+           {
+  columns: [
+    {
+      width: '*',
+      stack: [
+        { text: [{ text: 'Address: ', style: 'label' }, { text: 'Shyamnagar, North 24 Parganas, West Bengal - 743127', style: 'value' }] },
+        { text: [{ text: 'Reg. No: ', style: 'label' }, { text: '547/2023-26', style: 'value' }] }
+      ]
+    },
+    {
+      width: '*',
+      alignment: 'right',
+      stack: [
+        { text: [{ text: 'Phone No: ', style: 'label' }, { text: '9038271075', style: 'value' }] },
+        { text: [{ text: 'Mobile No: ', style: 'label' }, { text: '9038982752', style: 'value' }] }
+      ]
+    }
+  ],
+  margin: [0, 6, 0, 4]
+},
+{
+  canvas: [ // Horizontal separator line
+    {
+      type: 'line',
+      x1: 0, y1: 0,
+      x2: 515, y2: 0,
+      lineWidth: 1,
+      lineColor: '#888'
+    }
+  ],
+  margin: [0, 4, 0, 10]
+},
          
           {
             columns: [
