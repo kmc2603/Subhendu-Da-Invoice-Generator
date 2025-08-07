@@ -21,8 +21,7 @@ function generatePDF() {
   const totalWords = document.getElementById("total-words").innerText || '';
   const currentTab = window.currentTab || 'bill';
   const docTitle = currentTab === 'quotation' ? 'QUOTATION' : 'BILL';
-const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
-
+  const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
 
   const items = [];
   let serial = 1;
@@ -33,13 +32,12 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
     const amt = row.cells[4].innerText || '0';
     if (desc !== '') {
       items.push([
-  { text: `${serial++}`, alignment: 'center' },
-  { text: desc, noWrap: false },
-  { text: qty === 'na' ? 'N/A' : qty, alignment: 'center', noWrap: true },
-  { text: new Intl.NumberFormat('en-IN', { minimumFractionDigits: 2 }).format(rate), alignment: 'right' },
-  { text: new Intl.NumberFormat('en-IN', { minimumFractionDigits: 2 }).format(parseFloat(amt.replace(/,/g, ''))), alignment: 'right' }
-]);
-
+        { text: `${serial++}`, alignment: 'center' },
+        { text: desc, noWrap: false },
+        { text: qty === 'na' ? 'N/A' : qty, alignment: 'center', noWrap: true },
+        { text: new Intl.NumberFormat('en-IN', { minimumFractionDigits: 2 }).format(rate), alignment: 'right' },
+        { text: new Intl.NumberFormat('en-IN', { minimumFractionDigits: 2 }).format(parseFloat(amt.replace(/,/g, ''))), alignment: 'right' }
+      ]);
     }
   });
 
@@ -50,101 +48,93 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
         pageSize: 'A4',
         pageMargins: [40, 60, 40, 60],
         defaultStyle: { font: 'Roboto' },
-       footer: function(currentPage, pageCount) {
-  return {
-    margin: [40, 10, 40, 10],
-    layout: 'noBorders',
-    table: {
-      widths: ['*'],
-      body: [
-        [
-          {
-            stack: [
-              { text: 'A/C Details:', bold: true, margin: [0, 0, 0, 2] },
-              { text: [{ text: 'Bank Name: ', style: 'bankLabel' }, { text: 'Bank of Maharashtra', style: 'bankValue' }] },
-              { text: [{ text: 'A/C Name: ', style: 'bankLabel' }, { text: 'Ardhendu Chowdhury', style: 'bankValue' }] },
-              { text: [{ text: 'A/C No.: ', style: 'bankLabel' }, { text: '60293622134', style: 'bankValue' }] },
-              { text: [{ text: 'IFS Code: ', style: 'bankLabel' }, { text: 'MAHB0000973', style: 'bankValue' }] },
-              { text: [{ text: 'PAN No.: ', style: 'bankLabel' }, { text: 'ASSPC3871D', style: 'bankValue' }] }
-            ]
-          }
-        ]
-      ]
-    }
-  };
-},
-
-
+        footer: function(currentPage, pageCount) {
+          return {
+            margin: [40, 10, 40, 10],
+            layout: 'noBorders',
+            table: {
+              widths: ['*'],
+              body: [
+                [
+                  {
+                    stack: [
+                      { text: 'A/C Details:', bold: true, margin: [0, 0, 0, 2] },
+                      { text: [{ text: 'Bank Name: ', style: 'bankLabel' }, { text: 'Bank of Maharashtra', style: 'bankValue' }] },
+                      { text: [{ text: 'A/C Name: ', style: 'bankLabel' }, { text: 'Ardhendu Chowdhury', style: 'bankValue' }] },
+                      { text: [{ text: 'A/C No.: ', style: 'bankLabel' }, { text: '60293622134', style: 'bankValue' }] },
+                      { text: [{ text: 'IFS Code: ', style: 'bankLabel' }, { text: 'MAHB0000973', style: 'bankValue' }] },
+                      { text: [{ text: 'PAN No.: ', style: 'bankLabel' }, { text: 'ASSPC3871D', style: 'bankValue' }] }
+                    ]
+                  }
+                ]
+              ]
+            }
+          };
+        },
         content: [
+          { text: 'M/S Ardhendu Chowdhury', style: 'header' },
           {
-  text: 'M/S Ardhendu Chowdhury',
-  style: 'header'
-},
+            columns: [
+              {
+                width: '*',
+                stack: [
+                  {
+                    text: [
+                      { text: 'Address: ', style: 'label' },
+                      { text: 'Shyamnagar, North 24 Parganas, West Bengal - 743127', style: 'value' }
+                    ]
+                  }
+                ]
+              },
+              {
+                width: 'auto',
+                alignment: 'right',
+                stack: [
+                  {
+                    text: [
+                      { text: '📞 ', style: 'label' },
+                      { text: '9038271075', style: 'value' }
+                    ]
+                  },
+                  {
+                    text: [
+                      { text: '📱 ', style: 'label' },
+                      { text: '9038271075', style: 'value' }
+                    ]
+                  },
+                  {
+                    text: [
+                      { text: 'Reg. No: ', style: 'label' },
+                      { text: '547/2023-26', style: 'value' }
+                    ],
+                    margin: [0, 4, 0, 0]
+                  }
+                ]
+              }
+            ],
+            margin: [0, 6, 0, 6]
+          },
           {
-  columns: [
-    {
-      width: '*',
-      stack: [
-        {
-          text: [
-            { text: 'Address: ', style: 'label' },
-            { text: 'Shyamnagar, North 24 Parganas, West Bengal - 743127', style: 'value' }
-          ]
-        }
-      ]
-    },
-    {
-      width: 'auto',
-      alignment: 'right',
-      stack: [
-        {
-          text: [
-            { text: '📞 ', style: 'label' },
-            { text: '9038271075', style: 'value' }
-          ]
-        },
-        {
-          text: [
-            { text: '📱 ', style: 'label' },
-            { text: '9038271075', style: 'value' }
-          ]
-        },
-        {
-          text: [
-            { text: 'Reg. No: ', style: 'label' },
-            { text: '547/2023-26', style: 'value' }
-          ],
-          margin: [0, 4, 0, 0]
-        }
-      ]
-    }
-  ],
-  margin: [0, 6, 0, 6]
-},
-{
-  canvas: [
-    {
-      type: 'line',
-      x1: 0,
-      y1: 0,
-      x2: 515,
-      y2: 0,
-      lineWidth: 1,
-      lineColor: '#888'
-    }
-  ],
-  margin: [0, 4, 0, 10]
-},
-
-
-         
+            canvas: [
+              {
+                type: 'line',
+                x1: 0,
+                y1: 0,
+                x2: 515,
+                y2: 0,
+                lineWidth: 1,
+                lineColor: '#888'
+              }
+            ],
+            margin: [0, 4, 0, 10]
+          },
           {
             columns: [
               { text: [{ text: 'Ref. No: ', style: 'refLabel' }, { text: refNo, style: 'refValue' }] },
               { text: [{ text: 'Dated: ', style: 'refLabel' }, { text: date, style: 'refValue' }], alignment: 'right' }
             ]
           },
-           {
+          {
             text: currentTab.toUpperCase(),
             style: 'billTitle',
             alignment: 'center',
@@ -155,23 +145,22 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
           { text: clientAddress, style: 'clientValue' },
           { text: `Site Name: ${siteName}`, style: 'siteLabel', margin: [0, 0, 0, 10] },
           {
-  table: {
-    widths: ['auto', '*', 'auto', 60, 'auto'],  // slightly increase rate column
-    body: [['Sl. No', 'Description', 'Qty', 'Rate (₹)', 'Amount (₹)'], ...items]
-  },
-  layout: {
-    fillColor: (rowIdx) => rowIdx === 0 ? '#eeeeee' : null,
-    hLineColor: '#333',
-    vLineColor: '#333',
-    paddingLeft: function(i, node) { return 4; },
-    paddingRight: function(i, node) { return 4; },
-    paddingTop: function(i, node) { return 6; },
-    paddingBottom: function(i, node) { return 6; }
-  },
+            table: {
+              widths: ['auto', '*', 'auto', 60, 'auto'],
+              body: [['Sl. No', 'Description', 'Qty', 'Rate (₹)', 'Amount (₹)'], ...items]
+            },
+            layout: {
+              fillColor: (rowIdx) => rowIdx === 0 ? '#eeeeee' : null,
+              hLineColor: '#333',
+              vLineColor: '#333',
+              paddingLeft: function(i, node) { return 4; },
+              paddingRight: function(i, node) { return 4; },
+              paddingTop: function(i, node) { return 6; },
+              paddingBottom: function(i, node) { return 6; }
+            },
             style: 'wrapText',
-           margin: [0, 0, 0, 10]
-},
-
+            margin: [0, 0, 0, 10]
+          },
           {
             text: `Grand Total: ₹${grandTotal}`,
             alignment: 'right',
@@ -186,41 +175,30 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
             margin: [0, 0, 0, 14],
             style: 'totalWords'
           },
-         
-            
+          {
+            columns: [
+              { width: '*', text: '' },
               {
-  columns: [
-    {
-      width: '*',
-      text: ''  // empty column to push signature to the right
-    },
-    {
-      width: 'auto',
-      stack: [
-        {
-          image: signatureBase64,
-          width: 160,
-          margin: [0, 10, 0, 4]
-        },
-        {
-          text: 'For M/S Ardhendu Chowdhury',
-          bold: true,
-          alignment: 'right'
-        }
-      ]
-    }
-  ]
-}
-
-    
+                width: 'auto',
+                stack: [
+                  {
+                    image: signatureBase64,
+                    width: 160,
+                    margin: [0, 10, 0, 4]
+                  },
+                  {
+                    text: 'For M/S Ardhendu Chowdhury',
+                    bold: true,
+                    alignment: 'right'
+                  }
+                ]
+              }
+            ]
+          }
+        ],
         styles: {
           header: { fontSize: 16, bold: true, color: '#0D47A1' },
-          billTitle: {
-  fontSize: 16,
-  bold: true,
-  decoration: 'underline',
-  color: '#000000'
-},
+          billTitle: { fontSize: 16, bold: true, decoration: 'underline', color: '#000000' },
           infoBox: { fontSize: 10, lineHeight: 1.4 },
           label: { fontSize: 10, bold: true, color: '#333' },
           value: { fontSize: 10, color: '#222' },
