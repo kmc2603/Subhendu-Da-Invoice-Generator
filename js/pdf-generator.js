@@ -50,22 +50,30 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
         pageSize: 'A4',
         pageMargins: [40, 60, 40, 60],
         defaultStyle: { font: 'Roboto' },
-        footer: function(currentPage, pageCount) {
+       footer: function(currentPage, pageCount) {
   return {
-    columns: [
-      {
-  alignment: 'center',
-  margin: [0, 10, 0, 10],
-  fontSize: 10,
-  italics: true,
-  text: [
-    { text: 'Email: ', color: 'black' },
-    { text: 'chowdhuryardhendu00@gmail.com', color: '#1565C0' }
-  ]
-}
-    ]
+    margin: [40, 10, 40, 10],
+    layout: 'noBorders',
+    table: {
+      widths: ['*'],
+      body: [
+        [
+          {
+            stack: [
+              { text: 'A/C Details:', bold: true, margin: [0, 0, 0, 2] },
+              { text: [{ text: 'Bank Name: ', style: 'bankLabel' }, { text: 'Bank of Maharashtra', style: 'bankValue' }] },
+              { text: [{ text: 'A/C Name: ', style: 'bankLabel' }, { text: 'Ardhendu Chowdhury', style: 'bankValue' }] },
+              { text: [{ text: 'A/C No.: ', style: 'bankLabel' }, { text: '60293622134', style: 'bankValue' }] },
+              { text: [{ text: 'IFS Code: ', style: 'bankLabel' }, { text: 'MAHB0000973', style: 'bankValue' }] },
+              { text: [{ text: 'PAN No.: ', style: 'bankLabel' }, { text: 'ASSPC3871D', style: 'bankValue' }] }
+            ]
+          }
+        ]
+      ]
+    }
   };
 },
+
 
         content: [
           {
@@ -91,7 +99,7 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
       stack: [
         {
           text: [
-            { text: 'Phone: ', style: 'label' },
+            { text: 'Whatsapp: ', style: 'label' },
             { text: '9038271075', style: 'value' }
           ]
         },
@@ -177,15 +185,7 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
           },
          
           {
-            columns: [
-              [
-                { text: 'A/C Details:', bold: true, margin: [0, 10, 0, 2] },
-                { text: [{ text: 'Bank Name: ', style: 'bankLabel' }, { text: 'Bank of Maharashtra', style: 'bankValue' }] },
-                { text: [{ text: 'A/C Name: ', style: 'bankLabel' }, { text: 'Ardhendu Chowdhury', style: 'bankValue' }] },
-                { text: [{ text: 'A/C No.: ', style: 'bankLabel' }, { text: '60293622134', style: 'bankValue' }] },
-                { text: [{ text: 'IFS Code: ', style: 'bankLabel' }, { text: 'MAHB0000973', style: 'bankValue' }] },
-                { text: [{ text: 'PAN No.: ', style: 'bankLabel' }, { text: 'ASSPC3871D', style: 'bankValue' }] }
-              ],
+            
               {
                 width: 'auto',
                 stack: [
