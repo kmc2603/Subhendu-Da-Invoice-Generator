@@ -184,7 +184,6 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
             style: 'totalWords'
           },
          
-          {
             
               {
                 width: 'auto',
@@ -202,6 +201,7 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
                   }
                 ]
               }
+          
             ]
           }
         ],
