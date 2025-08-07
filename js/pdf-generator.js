@@ -80,7 +80,7 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
   text: 'M/S Ardhendu Chowdhury',
   style: 'header'
 },
-           {
+          {
   columns: [
     {
       width: '*',
@@ -99,14 +99,14 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
       stack: [
         {
           text: [
-            { text: 'Whatsapp: ', style: 'label' },
+            { text: '📞 ', style: 'label' },
             { text: '9038271075', style: 'value' }
           ]
         },
         {
           text: [
-            { text: 'Whatsapp: ', style: 'label' },
-            { text: '9038982752', style: 'value' }
+            { text: '📱 ', style: 'label' },
+            { text: '9038271075', style: 'value' }
           ]
         },
         {
@@ -122,17 +122,20 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
   margin: [0, 6, 0, 6]
 },
 {
-  canvas: [ // Horizontal separator line
+  canvas: [
     {
       type: 'line',
-      x1: 0, y1: 0,
-      x2: 515, y2: 0,
+      x1: 0,
+      y1: 0,
+      x2: 515,
+      y2: 0,
       lineWidth: 1,
       lineColor: '#888'
     }
   ],
   margin: [0, 4, 0, 10]
 },
+
 
          
           {
@@ -186,25 +189,30 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
          
             
               {
-                width: 'auto',
-                stack: [
-                  {
-                    image: signatureBase64,
-                    width: 160,
-                    alignment: 'right',
-                    margin: [-5, 10, 0, 4]
-                  },
-                  {
-                    text: 'For M/S Ardhendu Chowdhury',
-                    bold: true,
-                    alignment: 'right'
-                  }
-                ]
-              }
-          
-            ]
-          }
-   
+  columns: [
+    {
+      width: '*',
+      text: ''  // empty column to push signature to the right
+    },
+    {
+      width: 'auto',
+      stack: [
+        {
+          image: signatureBase64,
+          width: 160,
+          margin: [0, 10, 0, 4]
+        },
+        {
+          text: 'For M/S Ardhendu Chowdhury',
+          bold: true,
+          alignment: 'right'
+        }
+      ]
+    }
+  ]
+}
+
+    
         styles: {
           header: { fontSize: 16, bold: true, color: '#0D47A1' },
           billTitle: {
