@@ -204,7 +204,7 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
           
             ]
           }
-        ],
+   
         styles: {
           header: { fontSize: 16, bold: true, color: '#0D47A1' },
           billTitle: {
