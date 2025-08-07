@@ -91,13 +91,13 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
       stack: [
         {
           text: [
-            { text: '📞 Phone: ', style: 'label' },
+            { text: 'Phone: ', style: 'label' },
             { text: '9038271075', style: 'value' }
           ]
         },
         {
           text: [
-            { text: '📱 Mobile: ', style: 'label' },
+            { text: 'Mobile: ', style: 'label' },
             { text: '9038982752', style: 'value' }
           ]
         },
