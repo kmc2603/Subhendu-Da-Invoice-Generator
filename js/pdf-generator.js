@@ -52,38 +52,21 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
         defaultStyle: { font: 'Roboto' },
 footer: function(currentPage, pageCount) {
   return {
-    margin: [40, 10, 40, 10],
-    unbreakable: true,
-    stack: [
+    margin: [0, 6, 0, 10],
+    alignment: 'center',
+    fontSize: 10,
+    italics: true,
+    text: [
+      { text: 'Email: ', color: 'black' },
       {
-        alignment: 'left',
-        fontSize: 9,
-        stack: [
-          { text: 'A/C Details:', bold: true },
-          { text: 'Bank Name: Bank of Maharashtra' },
-          { text: 'A/C Name: Ardhendu Chowdhury' },
-          { text: 'A/C No.: 60293622134' },
-          { text: 'IFS Code: MAHB0000973' },
-          { text: 'PAN No.: ASSPC3871D' }
-        ]
-      },
-      {
-        margin: [6, 4, 6, 0],
-        alignment: 'center',
-        fontSize: 10,
-        italics: true,
-        text: [
-          { text: 'Email: ', color: 'black' },
-          {
-            text: 'chowdhuryardhendu00@gmail.com',
-            color: '#1565C0',
-            link: 'mailto:chowdhuryardhendu00@gmail.com'
-          }
-        ]
+        text: 'chowdhuryardhendu00@gmail.com',
+        color: '#1565C0',
+        link: 'mailto:chowdhuryardhendu00@gmail.com'
       }
     ]
   };
 },
+
 
 
         content: [
@@ -101,7 +84,7 @@ footer: function(currentPage, pageCount) {
       width: 'auto',
       stack: [
         { text: 'Phone No: 9038271075', style: 'value', alignment: 'right' },
-        { text: 'Mobile No: 9038982752', style: 'value', alignment: 'right' },
+        { text: 'WhatsApp: 9038982752', style: 'value', alignment: 'right' },
         { text: 'Reg. No: 547/2023-26', style: 'value', alignment: 'right' }
       ]
     }
@@ -113,6 +96,17 @@ footer: function(currentPage, pageCount) {
     { type: 'line', x1: 0, y1: 0, x2: 515, y2: 0, lineWidth: 1.5 }
   ],
   margin: [0, 10, 0, 10]
+},
+{
+  margin: [0, 40, 0, 0],
+  stack: [
+    { text: 'A/C Details:', style: 'bankLabel' },
+    { text: 'Bank Name: Bank of Maharashtra', style: 'bankValue' },
+    { text: 'A/C Name: Ardhendu Chowdhury', style: 'bankValue' },
+    { text: 'A/C No.: 60293622134', style: 'bankValue' },
+    { text: 'IFS Code: MAHB0000973', style: 'bankValue' },
+    { text: 'PAN No.: ASSPC3871D', style: 'bankValue' }
+  ]
 },
 
           {
