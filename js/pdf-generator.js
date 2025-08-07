@@ -111,7 +111,7 @@ footer: function(currentPage, pageCount) {
             alignment: 'center',
             margin: [0, 12, 0, 14]
           },
-          { text: 'Client Name:', style: 'label', margin: [0, 14, 0, 2] },
+          { text: 'To,', style: 'label', margin: [0, 14, 0, 2] },
           { text: clientName, style: 'clientValue' },
           { text: clientAddress, style: 'clientValue' },
           { text: `Site Name: ${siteName}`, style: 'siteLabel', margin: [0, 0, 0, 10] },
