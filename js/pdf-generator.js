@@ -77,20 +77,41 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
     {
       width: '*',
       stack: [
-        { text: [{ text: 'Address: ', style: 'label' }, { text: 'Shyamnagar, North 24 Parganas, West Bengal - 743127', style: 'value' }] },
-        { text: [{ text: 'Reg. No: ', style: 'label' }, { text: '547/2023-26', style: 'value' }] }
+        {
+          text: [
+            { text: 'Address: ', style: 'label' },
+            { text: 'Shyamnagar, North 24 Parganas, West Bengal - 743127', style: 'value' }
+          ]
+        }
       ]
     },
     {
-      width: '*',
+      width: 'auto',
       alignment: 'right',
       stack: [
-        { text: [{ text: 'Phone No: ', style: 'label' }, { text: '9038271075', style: 'value' }] },
-        { text: [{ text: 'Mobile No: ', style: 'label' }, { text: '9038982752', style: 'value' }] }
+        {
+          text: [
+            { text: '📞 Phone: ', style: 'label' },
+            { text: '9038271075', style: 'value' }
+          ]
+        },
+        {
+          text: [
+            { text: '📱 Mobile: ', style: 'label' },
+            { text: '9038982752', style: 'value' }
+          ]
+        },
+        {
+          text: [
+            { text: 'Reg. No: ', style: 'label' },
+            { text: '547/2023-26', style: 'value' }
+          ],
+          margin: [0, 4, 0, 0]
+        }
       ]
     }
   ],
-  margin: [0, 6, 0, 4]
+  margin: [0, 6, 0, 6]
 },
 {
   canvas: [ // Horizontal separator line
@@ -104,6 +125,7 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
   ],
   margin: [0, 4, 0, 10]
 },
+
          
           {
             columns: [
