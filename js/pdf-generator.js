@@ -144,24 +144,7 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
             margin: [0, 0, 0, 14],
             style: 'totalWords'
           },
-          ...(currentTab === 'bill'
-            ? [
-              {
-                text: `Amount Due: ₹${grandTotal}`,
-                bold: true,
-                color: '#D32F2F',
-                alignment: 'right',
-                margin: [0, 0, 0, 4],
-                style: 'amountDue'
-              },
-              {
-                text: totalWords.replace("Amount in words:", "Amount Due in words:"),
-                alignment: 'right',
-                margin: [0, 0, 0, 14],
-                style: 'totalWords',
-                color: '#D32F2F'
-              }
-            ] : []),
+         
           {
             columns: [
               [
