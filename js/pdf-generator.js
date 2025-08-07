@@ -182,8 +182,9 @@ footer: function(currentPage, pageCount) {
     { text: 'IFS Code: MAHB0000973', style: 'bankValue' },
     { text: 'PAN No.: ASSPC3871D', style: 'bankValue' }
   ]
-},
+    }
 
+  ],
 
         styles: {
           header: { fontSize: 16, bold: true, color: '#0D47A1' },
