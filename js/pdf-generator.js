@@ -83,8 +83,8 @@ footer: function(currentPage, pageCount) {
     {
       width: 'auto',
       stack: [
-        { text: 'Phone No: 9038271075', style: 'value', alignment: 'right' },
-        { text: 'WhatsApp: 9038982752', style: 'value', alignment: 'right' },
+        { text: 'WhatsApp: 9038271075', style: 'value', alignment: 'right' },
+        { text: 'Phone No: 9038982752', style: 'value', alignment: 'right' },
         { text: 'Reg. No: 547/2023-26', style: 'value', alignment: 'right' }
       ]
     }
@@ -148,17 +148,7 @@ footer: function(currentPage, pageCount) {
             style: 'totalWords'
           },
 
-          {
-  margin: [0, 40, 0, 0],
-  stack: [
-    { text: 'A/C Details:', style: 'bankLabel' },
-    { text: 'Bank Name: Bank of Maharashtra', style: 'bankValue' },
-    { text: 'A/C Name: Ardhendu Chowdhury', style: 'bankValue' },
-    { text: 'A/C No.: 60293622134', style: 'bankValue' },
-    { text: 'IFS Code: MAHB0000973', style: 'bankValue' },
-    { text: 'PAN No.: ASSPC3871D', style: 'bankValue' }
-  ]
-},
+          
           
           ...(currentTab === 'bill' ? [] : []),
           {
@@ -184,6 +174,18 @@ footer: function(currentPage, pageCount) {
             ]
           }
         ],
+
+        {
+  margin: [0, 40, 0, 0],
+  stack: [
+    { text: 'A/C Details:', style: 'bankLabel' },
+    { text: 'Bank Name: Bank of Maharashtra', style: 'bankValue' },
+    { text: 'A/C Name: Ardhendu Chowdhury', style: 'bankValue' },
+    { text: 'A/C No.: 60293622134', style: 'bankValue' },
+    { text: 'IFS Code: MAHB0000973', style: 'bankValue' },
+    { text: 'PAN No.: ASSPC3871D', style: 'bankValue' }
+  ]
+},
         styles: {
           header: { fontSize: 16, bold: true, color: '#0D47A1' },
           billTitle: {
