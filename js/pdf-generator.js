@@ -97,17 +97,7 @@ footer: function(currentPage, pageCount) {
   ],
   margin: [0, 10, 0, 10]
 },
-{
-  margin: [0, 40, 0, 0],
-  stack: [
-    { text: 'A/C Details:', style: 'bankLabel' },
-    { text: 'Bank Name: Bank of Maharashtra', style: 'bankValue' },
-    { text: 'A/C Name: Ardhendu Chowdhury', style: 'bankValue' },
-    { text: 'A/C No.: 60293622134', style: 'bankValue' },
-    { text: 'IFS Code: MAHB0000973', style: 'bankValue' },
-    { text: 'PAN No.: ASSPC3871D', style: 'bankValue' }
-  ]
-},
+
 
           {
             columns: [
@@ -157,6 +147,19 @@ footer: function(currentPage, pageCount) {
             margin: [0, 0, 0, 14],
             style: 'totalWords'
           },
+
+          {
+  margin: [0, 40, 0, 0],
+  stack: [
+    { text: 'A/C Details:', style: 'bankLabel' },
+    { text: 'Bank Name: Bank of Maharashtra', style: 'bankValue' },
+    { text: 'A/C Name: Ardhendu Chowdhury', style: 'bankValue' },
+    { text: 'A/C No.: 60293622134', style: 'bankValue' },
+    { text: 'IFS Code: MAHB0000973', style: 'bankValue' },
+    { text: 'PAN No.: ASSPC3871D', style: 'bankValue' }
+  ]
+},
+          
           ...(currentTab === 'bill' ? [] : []),
           {
             columns: [
