@@ -105,7 +105,7 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
         },
         {
           text: [
-            { text: 'Mobile: ', style: 'label' },
+            { text: 'Whatsapp: ', style: 'label' },
             { text: '9038982752', style: 'value' }
           ]
         },
