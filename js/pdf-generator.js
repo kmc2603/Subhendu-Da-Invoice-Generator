@@ -48,29 +48,39 @@ function generatePDF() {
         pageSize: 'A4',
         pageMargins: [40, 60, 40, 60],
         defaultStyle: { font: 'Roboto' },
-        footer: function(currentPage, pageCount) {
-          return {
-            margin: [40, 10, 40, 10],
-            layout: 'noBorders',
-            table: {
-              widths: ['*'],
-              body: [
-                [
-                  {
-                    stack: [
-                      { text: 'A/C Details:', bold: true, margin: [0, 0, 0, 2] },
-                      { text: [{ text: 'Bank Name: ', style: 'bankLabel' }, { text: 'Bank of Maharashtra', style: 'bankValue' }] },
-                      { text: [{ text: 'A/C Name: ', style: 'bankLabel' }, { text: 'Ardhendu Chowdhury', style: 'bankValue' }] },
-                      { text: [{ text: 'A/C No.: ', style: 'bankLabel' }, { text: '60293622134', style: 'bankValue' }] },
-                      { text: [{ text: 'IFS Code: ', style: 'bankLabel' }, { text: 'MAHB0000973', style: 'bankValue' }] },
-                      { text: [{ text: 'PAN No.: ', style: 'bankLabel' }, { text: 'ASSPC3871D', style: 'bankValue' }] }
-                    ]
-                  }
-                ]
-              ]
-            }
-          };
-        },
+       footer: function(currentPage, pageCount) {
+  return {
+    margin: [40, 10, 40, 10],
+    fontSize: 9,
+    layout: "noBorders",
+    table: {
+      widths: ['*'],
+      body: [
+        [
+          {
+            stack: [
+              {
+                text: 'A/C Details:',
+                style: 'bankLabel',
+                margin: [0, 0, 0, 2]
+              },
+              {
+                text: 'Bank Name: Bank of Maharashtra\nA/C Name: Ardhendu Chowdhury\nA/C No: 1234567890\nIFSC: MAHB0000123\nPAN: ABCDE1234F',
+                style: 'bankValue'
+              },
+              {
+                text: 'Email: ar.chowdhury@email.com',
+                style: 'emailLink',
+                margin: [0, 6, 0, 0]
+              }
+            ]
+          }
+        ]
+      ]
+    }
+  };
+},
+
         content: [
           { text: 'M/S Ardhendu Chowdhury', style: 'header' },
           {
