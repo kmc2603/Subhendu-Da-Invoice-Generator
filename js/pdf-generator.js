@@ -50,11 +50,25 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
         pageSize: 'A4',
         pageMargins: [40, 60, 40, 60],
         defaultStyle: { font: 'Roboto' },
-        footer: function(currentPage, pageCount) {
+footer: function(currentPage, pageCount) {
   return {
     margin: [40, 10, 40, 10],
+    unbreakable: true,
     stack: [
       {
+        alignment: 'left',
+        fontSize: 9,
+        stack: [
+          { text: 'A/C Details:', bold: true },
+          { text: 'Bank Name: Bank of Maharashtra' },
+          { text: 'A/C Name: Ardhendu Chowdhury' },
+          { text: 'A/C No.: 60293622134' },
+          { text: 'IFS Code: MAHB0000973' },
+          { text: 'PAN No.: ASSPC3871D' }
+        ]
+      },
+      {
+        margin: [6, 4, 6, 0],
         alignment: 'center',
         fontSize: 10,
         italics: true,
@@ -66,19 +80,6 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
             link: 'mailto:chowdhuryardhendu00@gmail.com'
           }
         ]
-      },
-      {
-        margin: [0, 6, 0, 0],
-        alignment: 'left',
-        fontSize: 9,
-        stack: [
-          { text: 'A/C Details:', bold: true },
-          { text: 'Bank Name: Bank of Maharashtra' },
-          { text: 'A/C Name: Ardhendu Chowdhury' },
-          { text: 'A/C No.: 60293622134' },
-          { text: 'IFS Code: MAHB0000973' },
-          { text: 'PAN No.: ASSPC3871D' }
-        ]
       }
     ]
   };
@@ -86,10 +87,7 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
 
 
         content: [
-          {
-  text: 'M/S Ardhendu Chowdhury',
-  style: 'header'
-},
+          
             {
   columns: [
     {
