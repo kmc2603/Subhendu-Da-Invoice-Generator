@@ -83,22 +83,7 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
     ]
   };
 },
-: function(currentPage, pageCount) {
-  return {
-    columns: [
-      {
-  alignment: 'center',
-  margin: [0, 10, 0, 10],
-  fontSize: 10,
-  italics: true,
-  text: [
-    { text: 'Email: ', color: 'black' },
-    { text: 'chowdhuryardhendu00@gmail.com', color: '#1565C0' }
-  ]
-}
-    ]
-  };
-},
+
 
         content: [
           {
