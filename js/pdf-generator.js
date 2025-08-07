@@ -50,52 +50,55 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
         pageSize: 'A4',
         pageMargins: [40, 60, 40, 60],
         defaultStyle: { font: 'Roboto' },
-        footer: function(currentPage, pageCount) {
+footer: function(currentPage, pageCount) {
   return {
-    columns: [
+    margin: [0, 6, 0, 10],
+    alignment: 'center',
+    fontSize: 10,
+    italics: true,
+    text: [
+      { text: 'Email: ', color: 'black' },
       {
-  alignment: 'center',
-  margin: [0, 10, 0, 10],
-  fontSize: 10,
-  italics: true,
-  text: [
-    { text: 'Email: ', color: 'black' },
-    { text: 'chowdhuryardhendu00@gmail.com', color: '#1565C0' }
-  ]
-}
+        text: 'chowdhuryardhendu00@gmail.com',
+        color: '#1565C0',
+        link: 'mailto:chowdhuryardhendu00@gmail.com'
+      }
     ]
   };
 },
 
+
+
         content: [
-          {
-  text: 'M/S Ardhendu Chowdhury',
-  style: 'header'
-},
+          
             {
-              margin: [0, 6, 0, 10],
-            table: {
-              widths: ['*'],
-              body: [[{
-                stack: [
-                  { text: [{ text: 'Address: ', style: 'label' }, { text: 'Shyamnagar, North 24 Parganas, West Bengal - 743127', style: 'value' }] },
-                  { text: [{ text: 'Phone No: ', style: 'label' }, { text: '9038271075', style: 'value' }] },
-                  { text: [{ text: 'Mobile No: ', style: 'label' }, { text: '9038982752', style: 'value' }] },
-                  { text: [{ text: 'Reg. No: ', style: 'label' }, { text: '547/2023-26', style: 'value' }] },
-                  {
-                    
-                  }
-                ],
-                style: 'infoBox'
-              }]]
-            },
-            layout: {
-              fillColor: '#f3f3f3',
-              hLineColor: '#333',
-              vLineColor: '#333'
-            }
-          },
-         
+  columns: [
+    {
+      width: '*',
+      stack: [
+        { text: 'M/S Ardhendu Chowdhury', style: 'header' },
+        { text: 'Address: Shyamnagar, North 24 Parganas, West Bengal - 743127', style: 'value' }
+      ]
+    },
+    {
+      width: 'auto',
+      stack: [
+        { text: 'WhatsApp: 9038271075', style: 'value', alignment: 'right' },
+        { text: 'Phone No: 9038982752', style: 'value', alignment: 'right' },
+        { text: 'Reg. No: 547/2023-26', style: 'value', alignment: 'right' }
+      ]
+    }
+  ],
+  margin: [0, 0, 0, 14]
+},
+{
+  canvas: [
+    { type: 'line', x1: 0, y1: 0, x2: 515, y2: 0, lineWidth: 1.5 }
+  ],
+  margin: [0, 10, 0, 10]
+},
+
+
           {
             columns: [
               { text: [{ text: 'Ref. No: ', style: 'refLabel' }, { text: refNo, style: 'refValue' }] },
@@ -108,7 +111,7 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
             alignment: 'center',
             margin: [0, 12, 0, 14]
           },
-          { text: 'Client Name:', style: 'label', margin: [0, 14, 0, 2] },
+          { text: 'To,', style: 'label', margin: [0, 14, 0, 2] },
           { text: clientName, style: 'clientValue' },
           { text: clientAddress, style: 'clientValue' },
           { text: `Site Name: ${siteName}`, style: 'siteLabel', margin: [0, 0, 0, 10] },
@@ -144,53 +147,45 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
             margin: [0, 0, 0, 14],
             style: 'totalWords'
           },
-          ...(currentTab === 'bill'
-            ? [
-              {
-                text: `Amount Due: ₹${grandTotal}`,
-                bold: true,
-                color: '#D32F2F',
-                alignment: 'right',
-                margin: [0, 0, 0, 4],
-                style: 'amountDue'
-              },
-              {
-                text: totalWords.replace("Amount in words:", "Amount Due in words:"),
-                alignment: 'right',
-                margin: [0, 0, 0, 14],
-                style: 'totalWords',
-                color: '#D32F2F'
-              }
-            ] : []),
-          {
-            columns: [
-              [
-                { text: 'A/C Details:', bold: true, margin: [0, 10, 0, 2] },
-                { text: [{ text: 'Bank Name: ', style: 'bankLabel' }, { text: 'Bank of Maharashtra', style: 'bankValue' }] },
-                { text: [{ text: 'A/C Name: ', style: 'bankLabel' }, { text: 'Ardhendu Chowdhury', style: 'bankValue' }] },
-                { text: [{ text: 'A/C No.: ', style: 'bankLabel' }, { text: '60293622134', style: 'bankValue' }] },
-                { text: [{ text: 'IFS Code: ', style: 'bankLabel' }, { text: 'MAHB0000973', style: 'bankValue' }] },
-                { text: [{ text: 'PAN No.: ', style: 'bankLabel' }, { text: 'ASSPC3871D', style: 'bankValue' }] }
-              ],
-              {
-                width: 'auto',
-                stack: [
-                  {
-                    image: signatureBase64,
-                    width: 160,
-                    alignment: 'right',
-                    margin: [-5, 10, 0, 4]
-                  },
-                  {
-                    text: 'For M/S Ardhendu Chowdhury',
-                    bold: true,
-                    alignment: 'right'
-                  }
-                ]
-              }
-            ]
-          }
-        ],
+
+          
+          
+          ...(currentTab === 'bill' ? [] : []),
+   {
+  columns: [
+    [],
+    {
+      width: 'auto',
+      stack: [
+        {
+          image: signatureBase64,
+          width: 160,
+          alignment: 'right',
+          margin: [-5, 10, 0, 4]
+        },
+        {
+          text: 'For M/S Ardhendu Chowdhury',
+          bold: true,
+          alignment: 'right'
+        }
+      ]
+    }
+  ]
+},
+{
+  margin: [0, 20, 0, 0],
+  stack: [
+    { text: 'A/C Details:', style: 'bankLabel', margin: [0, 10, 0, 2] },
+    { text: 'Bank Name: Bank of Maharashtra', style: 'bankValue' },
+    { text: 'A/C Name: Ardhendu Chowdhury', style: 'bankValue' },
+    { text: 'A/C No.: 60293622134', style: 'bankValue' },
+    { text: 'IFS Code: MAHB0000973', style: 'bankValue' },
+    { text: 'PAN No.: ASSPC3871D', style: 'bankValue' }
+  ]
+    }
+
+  ],
+
         styles: {
           header: { fontSize: 16, bold: true, color: '#0D47A1' },
           billTitle: {
