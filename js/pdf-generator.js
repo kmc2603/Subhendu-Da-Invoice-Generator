@@ -207,7 +207,7 @@ footer: function(currentPage, pageCount) {
     { text: 'A/C Details:', style: 'bankLabel', margin: [0, 10, 0, 2] },
     { text: 'Bank Name: Bank of Maharashtra', style: 'bankValue' },
     { text: 'A/C Name: Ardhendu Chowdhury', style: 'bankValue' },
-    { text: 'A/C No.: 6044702214', style: 'bankValue' },
+    { text: 'A/C No.: 60447022214', style: 'bankValue' },
     { text: 'IFS Code: MAHB0000973', style: 'bankValue' },
     { text: 'PAN No.: ASSPC3871D', style: 'bankValue' }
   ]
