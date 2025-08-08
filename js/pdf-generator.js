@@ -48,11 +48,11 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
 
       const docDefinition = {
         pageSize: 'A4',
-        pageMargins: [40, 60, 40, 60],
+        pageMargins: [40, 60, 40, 30],
         defaultStyle: { font: 'Roboto' },
 footer: function(currentPage, pageCount) {
   return {
-    margin: [0, 6, 0, 5],
+    margin: [0, 6, 0, 4],
     alignment: 'center',
     fontSize: 10,
     italics: true,
@@ -143,7 +143,7 @@ footer: function(currentPage, pageCount) {
     body: [['Sl. No', 'Description', 'Qty', 'Rate (₹)', 'Amount (₹)'], ...items]
   },
   layout: {
-    fillColor: (rowIdx) => rowIdx === 0 ? '#eeeeee' : null,
+    fillColor: () => null
     hLineColor: '#333',
     vLineColor: '#333',
     paddingLeft: function(i, node) { return 4; },
