@@ -108,7 +108,7 @@ footer: function(currentPage, pageCount) {
         { text: 'WhatsApp: 9038271075', style: 'value', alignment: 'right' },
         { text: 'Phone No: 9038982752', style: 'value', alignment: 'right' },
         { text: 'Registration No: 547/2023-26', style: 'value', alignment: 'right' }
-      ]
+      ],
       margin: [0, 14, 0, 0] // Push down to align with "Shyamnagar"
     }
   ],
