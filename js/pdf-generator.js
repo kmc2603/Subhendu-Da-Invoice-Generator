@@ -77,7 +77,7 @@ footer: function(currentPage, pageCount) {
       width: '*',
       stack: [
         { text: 'M/S Ardhendu Chowdhury', style: 'header' },
-        { text: 'Address: Shyamnagar, North 24 Parganas, West Bengal - 743127', style: 'value' }
+        { text: 'Shyamnagar, North 24 Parganas, West Bengal - 743127', style: 'value' }
       ]
     },
     {
@@ -85,7 +85,7 @@ footer: function(currentPage, pageCount) {
       stack: [
         { text: 'WhatsApp: 9038271075', style: 'value', alignment: 'right' },
         { text: 'Phone No: 9038982752', style: 'value', alignment: 'right' },
-        { text: 'Reg. No: 547/2023-26', style: 'value', alignment: 'right' }
+        { text: 'Registration No: 547/2023-26', style: 'value', alignment: 'right' }
       ]
     }
   ],
@@ -178,7 +178,7 @@ footer: function(currentPage, pageCount) {
     { text: 'A/C Details:', style: 'bankLabel', margin: [0, 10, 0, 2] },
     { text: 'Bank Name: Bank of Maharashtra', style: 'bankValue' },
     { text: 'A/C Name: Ardhendu Chowdhury', style: 'bankValue' },
-    { text: 'A/C No.: 60293622134', style: 'bankValue' },
+    { text: 'A/C No.: 6044702214', style: 'bankValue' },
     { text: 'IFS Code: MAHB0000973', style: 'bankValue' },
     { text: 'PAN No.: ASSPC3871D', style: 'bankValue' }
   ]
