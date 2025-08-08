@@ -82,7 +82,24 @@ footer: function(currentPage, pageCount) {
   color: '#800080', // Purple
   bold: true
 },
-        { text: 'Shyamnagar, North 24 Parganas, West Bengal - 743127', style: 'value' }
+       { 
+  text: 'Shyamnagar', 
+  style: 'value', 
+  color: '#00ffff', // Aqua
+  margin: [0, 0, 0, 2]
+},
+{ 
+  text: 'North 24 Parganas', 
+  style: 'value', 
+  color: 'black',
+  margin: [0, 0, 0, 2]
+},
+{ 
+  text: 'West Bengal - 743127', 
+  style: 'value', 
+  color: 'black',
+  margin: [0, 0, 0, 6]
+}
       ]
     },
     {
