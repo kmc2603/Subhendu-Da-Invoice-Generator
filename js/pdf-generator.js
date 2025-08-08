@@ -164,6 +164,12 @@ footer: function(currentPage, pageCount) {
           margin: [-5, 10, 0, 4]
         },
         {
+  canvas: [
+    { type: 'line', x1: 350, y1: 0, x2: 515, y2: 0, lineWidth: 1.5, lineColor: '#52c2f2' }
+  ],
+  margin: [0, 5, 0, 5]
+},
+        {
           text: 'For M/S Ardhendu Chowdhury',
           bold: true,
           alignment: 'right'
