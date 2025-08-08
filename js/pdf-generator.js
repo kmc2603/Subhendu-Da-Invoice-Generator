@@ -98,7 +98,7 @@ footer: function(currentPage, pageCount) {
   text: 'West Bengal - 743127', 
   style: 'value', 
   color: 'black',
-  margin: [0, 0, 0, 6]
+  margin: [0, 0, 0, 0]
 }
       ]
     },
@@ -117,7 +117,7 @@ footer: function(currentPage, pageCount) {
   canvas: [
     { type: 'line', x1: 0, y1: 0, x2: 515, y2: 0, lineWidth: 2, lineColor: '#52c2f2' }
   ],
-  margin: [0, 10, 0, 10]
+  margin: [0, 4, 0, 8]
 },
 
 
