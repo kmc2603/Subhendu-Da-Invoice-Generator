@@ -111,7 +111,7 @@ footer: function(currentPage, pageCount) {
       ]
     }
   ],
-  margin: [0, 0, 0, 14]
+  margin: [0, 0, 0, 5]
 },
 {
   canvas: [
