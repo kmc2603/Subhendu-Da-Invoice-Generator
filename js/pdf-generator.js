@@ -77,7 +77,7 @@ footer: function(currentPage, pageCount) {
       width: '*',
       stack: [
         { 
-  text: 'M/S Ardhendu Chowdhury', 
+  text: 'M/S  Ardhendu Chowdhury', 
   style: 'header',
   color: '#800080', // Purple
   bold: true
@@ -98,7 +98,7 @@ footer: function(currentPage, pageCount) {
 },
 {
   canvas: [
-    { type: 'line', x1: 0, y1: 0, x2: 515, y2: 0, lineWidth: 1.5, lineColor: '#52c2f2' }
+    { type: 'line', x1: 0, y1: 0, x2: 515, y2: 0, lineWidth: 2, lineColor: '#52c2f2' }
   ],
   margin: [0, 10, 0, 10]
 },
@@ -170,7 +170,7 @@ footer: function(currentPage, pageCount) {
         },
         {
   canvas: [
-    { type: 'line', x1: 350, y1: 0, x2: 515, y2: 0, lineWidth: 1.5, lineColor: '#52c2f2' }
+    { type: 'line', x1: 350, y1: 0, x2: 515, y2: 0, lineWidth: 2, lineColor: '#52c2f2' }
   ],
   margin: [0, 5, 0, 5]
 },
