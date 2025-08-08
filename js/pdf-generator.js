@@ -48,11 +48,11 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
 
       const docDefinition = {
         pageSize: 'A4',
-        pageMargins: [40, 60, 40, 60],
+        pageMargins: [40, 60, 40, 30],
         defaultStyle: { font: 'Roboto' },
 footer: function(currentPage, pageCount) {
   return {
-    margin: [0, 6, 0, 10],
+    margin: [0, 6, 0, 4],
     alignment: 'center',
     fontSize: 10,
     italics: true,
@@ -76,8 +76,30 @@ footer: function(currentPage, pageCount) {
     {
       width: '*',
       stack: [
-        { text: 'M/S Ardhendu Chowdhury', style: 'header' },
-        { text: 'Shyamnagar, North 24 Parganas, West Bengal - 743127', style: 'value' }
+        { 
+  text: 'M/S  Ardhendu Chowdhury', 
+  style: 'header',
+  color: '#800080', // Purple
+  bold: true
+},
+       { 
+  text: 'Shyamnagar', 
+  style: 'value', 
+  color: '#00ffff', // Aqua
+  margin: [0, 0, 0, 2]
+},
+{ 
+  text: 'North 24 Parganas', 
+  style: 'value', 
+  color: 'black',
+  margin: [0, 0, 0, 2]
+},
+{ 
+  text: 'West Bengal - 743127', 
+  style: 'value', 
+  color: 'black',
+  
+}
       ]
     },
     {
@@ -86,16 +108,17 @@ footer: function(currentPage, pageCount) {
         { text: 'WhatsApp: 9038271075', style: 'value', alignment: 'right' },
         { text: 'Phone No: 9038982752', style: 'value', alignment: 'right' },
         { text: 'Registration No: 547/2023-26', style: 'value', alignment: 'right' }
-      ]
+      ],
+      margin: [0, 14, 0, 0] // Push down to align with "Shyamnagar"
     }
   ],
-  margin: [0, 0, 0, 14]
+  margin: [0, 0, 0, 5]
 },
 {
   canvas: [
-    { type: 'line', x1: 0, y1: 0, x2: 515, y2: 0, lineWidth: 1.5, lineColor: '#52c2f2' }
+    { type: 'line', x1: 0, y1: 0, x2: 515, y2: 0, lineWidth: 2, lineColor: '#52c2f2' }
   ],
-  margin: [0, 10, 0, 10]
+  margin: [0, 4, 0, 8]
 },
 
 
@@ -121,7 +144,7 @@ footer: function(currentPage, pageCount) {
     body: [['Sl. No', 'Description', 'Qty', 'Rate (₹)', 'Amount (₹)'], ...items]
   },
   layout: {
-    fillColor: (rowIdx) => rowIdx === 0 ? '#eeeeee' : null,
+    fillColor: () => null,
     hLineColor: '#333',
     vLineColor: '#333',
     paddingLeft: function(i, node) { return 4; },
@@ -164,6 +187,12 @@ footer: function(currentPage, pageCount) {
           margin: [-5, 10, 0, 4]
         },
         {
+  canvas: [
+    { type: 'line', x1: 350, y1: 0, x2: 515, y2: 0, lineWidth: 2, lineColor: '#52c2f2' }
+  ],
+  margin: [0, 5, 0, 5]
+},
+        {
           text: 'For M/S Ardhendu Chowdhury',
           bold: true,
           alignment: 'right'
@@ -178,7 +207,7 @@ footer: function(currentPage, pageCount) {
     { text: 'A/C Details:', style: 'bankLabel', margin: [0, 10, 0, 2] },
     { text: 'Bank Name: Bank of Maharashtra', style: 'bankValue' },
     { text: 'A/C Name: Ardhendu Chowdhury', style: 'bankValue' },
-    { text: 'A/C No.: 6044702214', style: 'bankValue' },
+    { text: 'A/C No.: 60447022214', style: 'bankValue' },
     { text: 'IFS Code: MAHB0000973', style: 'bankValue' },
     { text: 'PAN No.: ASSPC3871D', style: 'bankValue' }
   ]
