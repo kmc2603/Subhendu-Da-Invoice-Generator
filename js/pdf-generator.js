@@ -52,7 +52,7 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
         defaultStyle: { font: 'Roboto' },
 footer: function(currentPage, pageCount) {
   return {
-    margin: [0, 6, 0, 10],
+    margin: [0, 6, 0, 5],
     alignment: 'center',
     fontSize: 10,
     italics: true,
