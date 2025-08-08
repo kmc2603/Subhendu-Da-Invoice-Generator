@@ -76,7 +76,12 @@ footer: function(currentPage, pageCount) {
     {
       width: '*',
       stack: [
-        { text: 'M/S Ardhendu Chowdhury', style: 'header' },
+        { 
+  text: 'M/S Ardhendu Chowdhury', 
+  style: 'header',
+  color: '#800080', // Purple
+  bold: true
+},
         { text: 'Shyamnagar, North 24 Parganas, West Bengal - 743127', style: 'value' }
       ]
     },
