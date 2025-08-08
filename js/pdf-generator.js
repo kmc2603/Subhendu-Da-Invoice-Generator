@@ -93,7 +93,7 @@ footer: function(currentPage, pageCount) {
 },
 {
   canvas: [
-    { type: 'line', x1: 0, y1: 0, x2: 515, y2: 0, lineWidth: 1.5 }
+    { type: 'line', x1: 0, y1: 0, x2: 515, y2: 0, lineWidth: 1.5, lineColor: '#00ffff' }
   ],
   margin: [0, 10, 0, 10]
 },
