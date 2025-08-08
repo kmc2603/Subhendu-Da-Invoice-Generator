@@ -98,7 +98,7 @@ footer: function(currentPage, pageCount) {
   text: 'West Bengal - 743127', 
   style: 'value', 
   color: 'black',
-  margin: [0, 0, 0, 0]
+  
 }
       ]
     },
