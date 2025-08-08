@@ -143,7 +143,7 @@ footer: function(currentPage, pageCount) {
     body: [['Sl. No', 'Description', 'Qty', 'Rate (₹)', 'Amount (₹)'], ...items]
   },
   layout: {
-    fillColor: () => null
+    fillColor: () => null,
     hLineColor: '#333',
     vLineColor: '#333',
     paddingLeft: function(i, node) { return 4; },
