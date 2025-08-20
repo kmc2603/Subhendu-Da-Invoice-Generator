@@ -122,22 +122,31 @@ footer: function(currentPage, pageCount) {
 },
 
 
+                    // Ref + Date
           {
             columns: [
               { text: [{ text: 'Ref. No: ', style: 'refLabel' }, { text: refNo, style: 'refValue' }] },
               { text: [{ text: 'Dated: ', style: 'refLabel' }, { text: date, style: 'refValue' }], alignment: 'right' }
-            ]
+            ],
+            margin: [0, 0, 0, 10]
           },
-           {
+
+          // Customer details (before bill title)
+          { text: 'To,', style: 'label', margin: [0, 0, 0, 2] },
+          { text: clientName, style: 'clientValue' },
+          { text: clientAddress, style: 'clientValue', margin: [0, 0, 0, 10] },
+
+          // Bill Title
+          {
             text: currentTab.toUpperCase(),
             style: 'billTitle',
             alignment: 'center',
-            margin: [0, 12, 0, 14]
+            margin: [0, 10, 0, 8]
           },
-          { text: 'To,', style: 'label', margin: [0, 14, 0, 2] },
-          { text: clientName, style: 'clientValue' },
-          { text: clientAddress, style: 'clientValue' },
-          { text: `Site Name: ${siteName}`, style: 'siteLabel', margin: [0, 0, 0, 10] },
+
+          // Site Name (below bill heading)
+          { text: `Site Name: ${siteName}`, style: 'siteLabel', alignment: 'center', margin: [0, 0, 0, 14] },
+
           {
   table: {
     widths: ['auto', '*', 'auto', 60, 'auto'],  // slightly increase rate column
