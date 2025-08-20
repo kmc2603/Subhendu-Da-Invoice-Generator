@@ -221,7 +221,7 @@ footer: function(currentPage, pageCount) {
 {
   margin: [0, 20, 0, 0],
   stack: [
-    { text: 'A/C Details:', style: 'bankLabel', margin: [0, 10, 0, 2], bold: true},
+    { text: 'A/C Details:', style: 'bankLabel', margin: [0, 10, 0, 2], color: 'black'},
     { text: 'Bank Name: Bank of Maharashtra', style: 'bankValue' },
     { text: 'A/C Name: Ardhendu Chowdhury', style: 'bankValue' },
     { text: 'A/C No.: 60447022214', style: 'bankValue' },
