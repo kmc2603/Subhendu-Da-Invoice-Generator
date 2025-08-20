@@ -147,7 +147,7 @@ footer: function(currentPage, pageCount) {
           // Site Name (below bill heading)
          {
   text: [
-    { text: 'Site Name: ', style: 'siteLabel', color: '#1565C0', bold: true },
+    { text: 'Site Name: ', style: 'siteLabel', color: '#d633ff', bold: true },
     { text: siteName, style: 'siteLabel', color: '#1565C0' }
   ],
   alignment: 'center',
