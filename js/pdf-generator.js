@@ -105,10 +105,10 @@ footer: function(currentPage, pageCount) {
     {
       width: 'auto',
       stack: [
-        { text: 'WhatsApp: 9038271075', style: 'value', alignment: 'right' },
-        { text: 'Phone No: 9038982752', style: 'value', alignment: 'right' },
-        { text: 'Registration No: 547/2023-26', style: 'value', alignment: 'right' }
-      ],
+  { text: [{ text: 'WhatsApp: ', bold: true, italics: true }, { text: '9038271075' }], style: 'value', alignment: 'right' },
+  { text: [{ text: 'Phone No: ', bold: true, italics: true }, { text: '9038982752' }], style: 'value', alignment: 'right' },
+  { text: [{ text: 'Registration No: ', bold: true, italics: true }, { text: '547/2023-26' }], style: 'value', alignment: 'right' }
+],
       margin: [0, 14, 0, 0] // Push down to align with "Shyamnagar"
     }
   ],
@@ -122,22 +122,39 @@ footer: function(currentPage, pageCount) {
 },
 
 
+                    // Ref + Date
           {
             columns: [
               { text: [{ text: 'Ref. No: ', style: 'refLabel' }, { text: refNo, style: 'refValue' }] },
               { text: [{ text: 'Dated: ', style: 'refLabel' }, { text: date, style: 'refValue' }], alignment: 'right' }
-            ]
+            ],
+            margin: [0, 0, 0, 10]
           },
-           {
+
+          // Customer details (before bill title)
+          { text: 'To,', style: 'label', margin: [0, 0, 0, 2] },
+          { text: clientName, style: 'clientValue' },
+          { text: clientAddress, style: 'clientValue', margin: [0, 0, 0, 10] },
+
+          // Bill Title
+          {
             text: currentTab.toUpperCase(),
             style: 'billTitle',
             alignment: 'center',
-            margin: [0, 12, 0, 14]
+            margin: [0, 10, 0, 8]
           },
-          { text: 'To,', style: 'label', margin: [0, 14, 0, 2] },
-          { text: clientName, style: 'clientValue' },
-          { text: clientAddress, style: 'clientValue' },
-          { text: `Site Name: ${siteName}`, style: 'siteLabel', margin: [0, 0, 0, 10] },
+
+          // Site Name (below bill heading)
+         {
+  text: [
+    { text: 'Site Name: ', style: 'siteLabel', color: '#d633ff', bold: true },
+    { text: siteName, style: 'siteLabel', color: '#1565C0' }
+  ],
+  alignment: 'center',
+  margin: [0, 0, 0, 14]
+},
+
+
           {
   table: {
     widths: ['auto', '*', 'auto', 60, 'auto'],  // slightly increase rate column
@@ -204,7 +221,7 @@ footer: function(currentPage, pageCount) {
 {
   margin: [0, 20, 0, 0],
   stack: [
-    { text: 'A/C Details:', style: 'bankLabel', margin: [0, 10, 0, 2] },
+    { text: 'A/C Details:', style: 'bankLabel', margin: [0, 10, 0, 2], color: 'black'},
     { text: 'Bank Name: Bank of Maharashtra', style: 'bankValue' },
     { text: 'A/C Name: Ardhendu Chowdhury', style: 'bankValue' },
     { text: 'A/C No.: 60447022214', style: 'bankValue' },
