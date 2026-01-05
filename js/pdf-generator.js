@@ -28,7 +28,7 @@ const fileName = currentTab === 'quotation' ? 'Quotation.pdf' : 'Bill.pdf';
   let serial = 1;
   document.querySelectorAll('#itemsTable tbody tr').forEach(row => {
     const desc = row.cells[1].querySelector('input').value.trim();
-    const qty = row.cells[2].querySelector('select').value || '0';
+    const qty = row.cells[2].querySelector('input').value || '0';
     const rate = row.cells[3].querySelector('input').value || '0';
     const amt = row.cells[4].innerText || '0';
     if (desc !== '') {
