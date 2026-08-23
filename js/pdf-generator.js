@@ -107,7 +107,7 @@ footer: function(currentPage, pageCount) {
       stack: [
   { text: [{ text: 'WhatsApp: ', bold: true, italics: true }, { text: '9038271075' }], style: 'value', alignment: 'right' },
   { text: [{ text: 'Phone No: ', bold: true, italics: true }, { text: '9038982752' }], style: 'value', alignment: 'right' },
-  { text: [{ text: 'Registration No: ', bold: true, italics: true }, { text: '547/2023-26' }], style: 'value', alignment: 'right' }
+  { text: [{ text: 'Registration No: ', bold: true, italics: true }, { text: '845/2026-29' }], style: 'value', alignment: 'right' }
 ],
       margin: [0, 14, 0, 0] // Push down to align with "Shyamnagar"
     }
